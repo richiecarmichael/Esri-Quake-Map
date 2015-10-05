@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<!-------------------------------------------------------------------------------------
+   Developed by the Applications Prototype Lab
+   (c) 2015 Esri | http://www.esri.com/legal/software-license
+------------------------------------------------------------------------------------->
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <title>Quake Map</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+    <meta name='author' content='Esri' />
+    <meta name='keywords' content='' />
+    <meta name='description' content='' />
+    <link type='text/css' rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto:400,700|Berkshire+Swash:400' />
+    <link type='text/css' rel='stylesheet' href='//js.arcgis.com/4.0beta1/esri/css/esri.css'>
+    <link type='text/css' rel='stylesheet' href='index.css'>
+    <script type='text/javascript' src='js/jquery-2.1.4.min.js'></script>
+    <script type='text/javascript' src='js/sylvester.min.js'></script>
+    <script type='text/javascript' src='js/d3.min.js'></script>
+    <script type='text/javascript' src='//js.arcgis.com/4.0beta1'></script>
+    <script type='text/javascript' src='index.js'></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-10866840-24', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div id='top'>
+        <a id='logo-esri' href='http://www.esri.com' target='_blank'>
+            <img src='img/esri.png' alt='esri' height='50' />
+        </a>
+        <a id='logo-usgs' href='http://www.usgs.gov/' target='_blank'>
+            <img src='img/usgs.png' alt='usgs' height='35' />
+        </a>
+        <div id='heading'>One Hundred Years of Quakes</div>
+    </div>
+    <div id='bottom'>
+        <div id='bottom-left'>
+            <div id='map'></div>
+            <div id='chart'></div>
+            <div id='filters' class='buttons'>
+                <div data-filter='all' class='selected'>
+                    <img src='img/home.png' height='20' />
+                    <div>
+                        All
+                    </div>
+                </div><div data-filter='quake'>
+                    <img src='img/quake.png' height='20' />
+                    <div>
+                        Quakes
+                    </div>
+                </div><div data-filter='nuke'>
+                    <img src='img/nuke.png' height='20' />
+                    <div>
+                        Nukes
+                    </div>
+                </div><div data-filter='deadliest'>
+                    <img src='img/deadliest.png' height='20' />
+                    <div>
+                        Deadliest
+                    </div>
+                </div><div data-filter='largest'>
+                    <img src='img/explosion.png' height='20' />
+                    <div>
+                        Largest
+                    </div>
+                </div>
+            </div>
+            <div id='help' class='buttons'>
+                <div data-topic='how'>
+                    <img src='img/help.png' height='20' />
+                    <div>
+                        Help
+                    </div>
+                </div><div data-topic='about'>
+                    <img src='img/about.png' height='20' />
+                    <div>
+                        About
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='bottom-right'>
+            <div id='quakes'></div>
+        </div>
+        <svg>
+            <g>
+                <circle visibility='hidden' r='0' />
+            </g>
+        </svg>
+    </div>
+    <div id='about'>
+        <div id='about-window'>
+            <div id='about-description'>
+                <p>This application was designed and developed by Esri's applications prototype lab in Redlands, California. The applicatio is build using:</p>
+                <ul style="list-style-type:disc">
+                    <li>ArcGIS API for JavaScript (beta) by Esri</li>
+                    <li>jQuery</li>
+                    <li>D3 by </li>
+                    <li>Sylvester by James Coglan</li>
+                    <li>Google Fonts Roboto and Berkshire Swash</li>
+                </ul>
+                <p>The Earthquake data consists of 10835 seimic events from 1900 with magnitutudes greater than six on the Richter scale.</p>
+                <p>Seimic events hightlighted red in the chart indicate those events within a one year period, or half a year either side of the red line.</p>
+                <p>The souce code for this application can be downloaded from here.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

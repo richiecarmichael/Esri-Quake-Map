@@ -1,0 +1,269 @@
+﻿/* -----------------------------------------------------------------------------------
+   Developed by the Applications Prototype Lab
+   (c) 2015 Esri | http://www.esri.com/legal/software-license  
+----------------------------------------------------------------------------------- */
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+#top {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 60px;
+    background: #007ac2;
+    border-bottom: 1px solid #000;
+}
+
+#bottom {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #000;
+}
+
+#bottom-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 300px;
+    bottom: 0px;
+}
+
+#bottom-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#logo-esri {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+}
+
+#logo-usgs {
+    position: absolute;
+    top: 15px;
+    right: 175px;
+}
+
+#heading {
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    right: 300px;
+    text-align: center;
+    pointer-events: none;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 42px;
+}
+
+#map {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 200px;
+    right: 0px;
+}
+
+#quakes {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#chart {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 200px;
+    pointer-events: none;
+}
+
+#dots circle {
+    fill: rgba(255, 255, 255, 0.2);
+    stroke: none;
+    cursor: pointer;
+}
+
+#dots circle.current {
+    fill: rgba(255, 0, 0, 1);
+}
+
+#dots circle.selected,
+#dots circle.current.selected {
+    fill: rgba(0, 255, 255, 1);
+}
+
+#dots circle.hidden {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+#timeline line {
+    stroke: rgba(255, 0, 0, 0.5);
+    stroke-width: 5;
+    stroke-linecap: round;
+    pointer-events: all;
+    cursor: col-resize;
+}
+
+#timeline polygon {
+    stroke: none;
+    pointer-events: all;
+    cursor: col-resize;
+    fill: rgba(255, 0, 0, 0.5);
+}
+
+#yaxis text {
+    fill: rgba(255, 255, 255, 0.5);
+    stroke: none;
+}
+
+#filters {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+#help {
+    position: absolute;
+    left: 10px;
+    top: 225px;
+}
+
+#about {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right:0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#about-window {
+    position: absolute;
+    left:50%;
+    top:50%;
+    width: 400px;
+    height:300px;
+    margin-left:-200px;
+    margin-top:-150px;
+    border: 1px solid #fff;
+    /*background-color: #000;*/
+}
+
+.buttons > div {
+    display: block;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    width: 125px;
+    height: 30px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    padding-top: 7px;
+    padding-left:15px;
+}
+
+.buttons > div:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.buttons > div.selected,
+.buttons > div.selected:hover {
+    background: rgba(0, 255, 255, 0.5);
+}
+
+.buttons > div:hover {
+    background: rgba(0, 255, 255, 0.2);
+}
+
+.buttons > div > img, 
+.buttons > div > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.buttons > div > div {
+    margin-left: 5px;
+}
+
+.domain {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-width: 1;
+}
+
+.tick line {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-width: 1;
+}
+
+.tick text {
+    fill: rgba(255, 255, 255, 0.5);
+    stroke: none;
+}
+
+div.panel-quake {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+div.panel-quake:hover,
+div.panel-quake.selected {
+    background: rgba(0, 255, 255, 0.5);
+}
+
+div.panel-quake > table {
+    width: 275px;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    border: none;
+}
+
+div.panel-quake td {
+    padding: 0px 0px 0px 0px;
+}
+
+div.panel-quake a:link,
+div.panel-quake a:visited  {
+     color: rgba(255, 255, 255, 0.5);
+}
+
+div.panel-quake a:hover,
+div.panel-quake a:active {
+    color:  #ffa500;
+}
