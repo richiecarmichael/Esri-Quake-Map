@@ -32,10 +32,10 @@
 </head>
 <body>
     <div id='top'>
-        <a id='logo-esri' href='http://www.esri.com' target='_blank'>
+        <a id='logo-esri' href='http://www.esri.com'>
             <img src='img/esri.png' alt='esri' height='50' />
         </a>
-        <a id='logo-usgs' href='http://www.usgs.gov/' target='_blank'>
+        <a id='logo-usgs' href='http://www.usgs.gov'>
             <img src='img/usgs.png' alt='usgs' height='35' />
         </a>
         <div id='heading'>One Hundred Years of Quakes</div>
@@ -44,43 +44,43 @@
         <div id='bottom-left'>
             <div id='map'></div>
             <div id='chart'></div>
-            <div id='filters' class='buttons'>
-                <div data-filter='all' class='selected'>
+            <div id='filters'>
+                <div data-action='all' class='button selected'>
                     <img src='img/home.png' height='20' />
-                    <div>
+                    <div class='button-text'>
                         All
                     </div>
-                </div><div data-filter='quake'>
+                </div><div data-action='quake' class='button'>
                     <img src='img/quake.png' height='20' />
-                    <div>
+                    <div class='button-text'>
                         Quakes
                     </div>
-                </div><div data-filter='nuke'>
+                </div><div data-action='nuke' class='button'>
                     <img src='img/nuke.png' height='20' />
-                    <div>
+                    <div class='button-text'>
                         Nukes
                     </div>
-                </div><div data-filter='deadliest'>
+                </div><div data-action='deadliest' class='button'>
                     <img src='img/deadliest.png' height='20' />
-                    <div>
+                    <div class='button-text'>
                         Deadliest
                     </div>
-                </div><div data-filter='largest'>
+                </div><div data-action='largest' class='button'>
                     <img src='img/explosion.png' height='20' />
-                    <div>
+                    <div class='button-text'>
                         Largest
                     </div>
                 </div>
             </div>
-            <div id='help' class='buttons'>
-                <div data-topic='how'>
+            <div id='help'>
+                <div data-action='how' class='button'>
                     <img src='img/help.png' height='20' />
-                    <div>
+                    <div class='button-text'>
                         Help
                     </div>
-                </div><div data-topic='about'>
+                </div><div data-action='about' class='button'>
                     <img src='img/about.png' height='20' />
-                    <div>
+                    <div class='button-text'>
                         About
                     </div>
                 </div>
@@ -98,17 +98,21 @@
     <div id='about'>
         <div id='about-window'>
             <div id='about-description'>
-                <p>This application was designed and developed by Esri's applications prototype lab in Redlands, California. The applicatio is build using:</p>
-                <ul style="list-style-type:disc">
-                    <li>ArcGIS API for JavaScript (beta) by Esri</li>
-                    <li>jQuery</li>
-                    <li>D3 by </li>
-                    <li>Sylvester by James Coglan</li>
-                    <li>Google Fonts Roboto and Berkshire Swash</li>
+                <p>This application was designed and developed by <a href='http://www.esri.com'>Esri</a>'s <a href='http://blogs.esri.com/esri/apl/'>Prototype Lab</a> in <a href='https://en.wikipedia.org/wiki/Redlands,_California'>Redlands</a>, California. The application is built using the following technologies:</p>
+                <ul>
+                    <li><a href='https://developers.arcgis.com/javascript/'>ArcGIS API for JavaScript</a> (<a href='https://developers.arcgis.com/javascript/beta/'>beta</a>) by Esri</li>
+                    <li><a href='http://d3js.org/'>D3.js</a> by <a href='http://bost.ocks.org/mike/'>Mike Bostock</a></li>
+                    <li><a href='https://www.google.com/fonts'>Google Fonts</a>, specifically <a href='https://www.google.com/fonts/specimen/Roboto'>Roboto</a> and <a href='https://www.google.com/fonts/specimen/Berkshire+Swash'>Berkshire Swash</a></li>
+                    <li><a href='http://jquery.com/'>jQuery</a> by the jQuery Foundation Inc.</li>
+                    <li><a href='http://sylvester.jcoglan.com/'>Sylvester</a> by <a href='http://jcoglan.com/'>James Coglan</a></li>
+                    
                 </ul>
-                <p>The Earthquake data consists of 10835 seimic events from 1900 with magnitutudes greater than six on the Richter scale.</p>
+                <p><a href=''>Earthquake</a> data consists of 10,835 seimic events from 1900 to July 2015 with magnitudes of six or greater on the <a href='https://en.wikipedia.org/wiki/Richter_magnitude_scale'>Richter scale</a>. The data was downloaded from the <a href='http://www.usgs.gov/'>USGS</a>'s <a href='http://earthquake.usgs.gov/monitoring/anss/'>ANSS</a> <a href='http://earthquake.usgs.gov/earthquakes/search/'>Comprehensive Earthquake Catalog</a>.</p>
                 <p>Seimic events hightlighted red in the chart indicate those events within a one year period, or half a year either side of the red line.</p>
-                <p>The souce code for this application can be downloaded from here.</p>
+                <p>The souce code for this application can be downloaded from <a href='https://github.com/richiecarmichael/Esri-Quake-Map'>here</a>.</p>
+            </div>
+            <div data-action='close' class='button align-center'>
+                <div>Close</div>
             </div>
         </div>
     </div>

@@ -781,7 +781,7 @@ function (
             }
         });
 
-        $('#filters > div').click(function () {
+        $('#filters .button').click(function () {
             // Exit if already selected
             if ($(this).hasClass('selected')) { return; }
 
@@ -789,7 +789,7 @@ function (
             $(this).addClass('selected').siblings().removeClass('selected');
 
             // Show/hide quakes
-            switch ($(this).attr('data-filter')) {
+            switch ($(this).attr('data-action')) {
                 case 'all':
                     d3.selectAll('#dots circle').classed('hidden', false);
                     break;
@@ -825,8 +825,8 @@ function (
             loadPanel();
         });
 
-        $('#help > div').click(function () {
-            switch ($(this).attr('data-topic')) {
+        $('#help .button').click(function () {
+            switch ($(this).attr('data-action')) {
                 case 'how':
                     break;
                 case 'about':
@@ -834,6 +834,12 @@ function (
                     break;
             }
         });
+
+        $('#about .button').click(function () {
+            $('#about').fadeOut();
+        });
+
+        $('a').attr('target', '_blank');
 
         $.fn.scrollToView = function () {
             return $.each(this, function () {

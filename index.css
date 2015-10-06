@@ -166,55 +166,77 @@ html, body {
     right:0px;
     bottom: 0px;
     background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
 }
 
 #about-window {
     position: absolute;
     left:50%;
     top:50%;
-    width: 400px;
-    height:300px;
-    margin-left:-200px;
-    margin-top:-150px;
-    border: 1px solid #fff;
-    /*background-color: #000;*/
+    width: 600px;
+    height:400px;
+    margin-left:-300px;
+    margin-top:-200px;
+    /*border: 1px solid #fff;*/
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    pointer-events: all;
 }
 
-.buttons > div {
+#about-window .button {
+    position: absolute;
+    right:10px;
+    bottom: 10px;
+}
+
+#about-description {
+    font-size: 16px;
+    margin: 10px 10px 10px 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#about-description ul {
+    list-style-type: disc;
+}
+
+.button {
     display: block;
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.5);
-    width: 125px;
+    width: 115px;
     height: 30px;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.5);
     font-size: 16px;
     padding-top: 7px;
     padding-left:15px;
+    padding-right:15px;
 }
 
-.buttons > div:last-child {
+.button:last-child {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.buttons > div.selected,
-.buttons > div.selected:hover {
+.button.selected,
+.button.selected:hover {
     background: rgba(0, 255, 255, 0.5);
 }
 
-.buttons > div:hover {
+.button:hover {
     background: rgba(0, 255, 255, 0.2);
 }
 
-.buttons > div > img, 
-.buttons > div > div {
+.button > * {
     display: inline-block;
     vertical-align: middle;
 }
 
-.buttons > div > div {
+.button .button-text {
     margin-left: 5px;
+}
+
+.button.align-center {
+    text-align: center;
 }
 
 .domain {
@@ -266,4 +288,12 @@ div.panel-quake a:visited  {
 div.panel-quake a:hover,
 div.panel-quake a:active {
     color:  #ffa500;
+}
+
+a:link, a:visited {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+a:hover , a:active  {
+    color: rgba(100, 149, 237, 0.5);
 }
