@@ -185,6 +185,10 @@ function (
         var _sizeBuffer = null;
         var _isdragging = false;
         var _currentTime = DATE_START;
+        var _pauseAnimation = true;
+
+        // Show welcome screen
+        $('#welcome').fadeIn();
 
         // Create map and view
         var _view = new SceneView({
@@ -695,6 +699,12 @@ function (
                 _gl.enableVertexAttribArray(_shader.color);
                 _gl.enableVertexAttribArray(_shader.size);
 
+                // If the help or about windows are open, pause animation
+                if (_pauseAnimation) {
+                    render(_gl.POINTS, [0, 0, 0], [1, 0, 0, 1], [1]);
+                    return;
+                }
+
                 // Fix - If no quakes selected then add a red dot in the center of the globe
                 var quakes = d3.selectAll('#dots circle.current:not(.hidden)');
                 if (quakes.size() === 0) {
@@ -828,15 +838,71 @@ function (
         $('#help .button').click(function () {
             switch ($(this).attr('data-action')) {
                 case 'how':
+                    $('#tutorial-1').fadeIn();
+                    _pauseAnimation = true;
                     break;
                 case 'about':
                     $('#about').fadeIn();
+                    _pauseAnimation = true;
                     break;
             }
         });
 
         $('#about .button').click(function () {
-            $('#about').fadeOut();
+            switch ($(this).attr('data-action')) {
+                case 'close':
+                    _pauseAnimation = false;
+                    $('#about').fadeOut();
+                    break;
+            }
+        });
+
+        $('#welcome .button').click(function () {
+            switch ($(this).attr('data-action')) {
+                case 'tutorial':
+                    $('#welcome').fadeOut();
+                    $('#tutorial-1').fadeIn();
+                    break;
+                case 'close':
+                    _pauseAnimation = false;
+                    $('#welcome').fadeOut();
+                    break;
+            }
+        });
+
+        $('#tutorial-1 .button').click(function () {
+            switch ($(this).attr('data-action')) {
+                case 'next':
+                    $('#tutorial-1').fadeOut();
+                    $('#tutorial-2').fadeIn();
+                    break;
+                case 'finish':
+                    _pauseAnimation = false;
+                    $('#tutorial-1').fadeOut();
+                    break;
+            }
+        });
+
+        $('#tutorial-2 .button').click(function () {
+            switch ($(this).attr('data-action')) {
+                case 'next':
+                    $('#tutorial-2').fadeOut();
+                    $('#tutorial-3').fadeIn();
+                    break;
+                case 'finish':
+                    _pauseAnimation = false;
+                    $('#tutorial-2').fadeOut();
+                    break;
+            }
+        });
+
+        $('#tutorial-3 .button').click(function () {
+            switch ($(this).attr('data-action')) {
+                case 'finish':
+                    _pauseAnimation = false;
+                    $('#tutorial-3').fadeOut();
+                    break;
+            }
         });
 
         $('a').attr('target', '_blank');

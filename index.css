@@ -148,58 +148,67 @@ html, body {
 
 #filters {
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 15px;
+    top: 15px;
 }
 
 #help {
     position: absolute;
-    left: 10px;
-    top: 225px;
+    left: 15px;
+    top: 220px;
 }
 
-#about {
+.dialog {
     display: none;
     position: absolute;
     left: 0px;
     top: 0px;
-    right:0px;
+    right: 0px;
     bottom: 0px;
-    background-color: rgba(0, 0, 0, 0.7);
-    pointer-events: none;
 }
 
-#about-window {
+.dialog > div {
     position: absolute;
-    left:50%;
-    top:50%;
-    width: 600px;
-    height:400px;
-    margin-left:-300px;
-    margin-top:-200px;
-    /*border: 1px solid #fff;*/
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    pointer-events: all;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 520px;
+    margin-left: -250px;
+    margin-top: -260px;
+    border: 1px solid #004a76;
+    background-color: #000;
 }
 
-#about-window .button {
+.dialog-banner {
     position: absolute;
-    right:10px;
-    bottom: 10px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 35px;
+    background-color:#007ac2;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 5px;
 }
 
-#about-description {
+.dialog-buttons {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.dialog-description {
     font-size: 16px;
-    margin: 10px 10px 10px 10px;
+    margin: 50px 15px 15px 15px;
     color: rgba(255, 255, 255, 0.5);
 }
 
-#about-description ul {
+.dialog-description ul {
     list-style-type: disc;
 }
 
 .button {
-    display: block;
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.5);
@@ -209,11 +218,12 @@ html, body {
     color: rgba(255, 255, 255, 0.5);
     font-size: 16px;
     padding-top: 7px;
-    padding-left:15px;
-    padding-right:15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.button:last-child {
+.button.vertical:last-child,
+.button.horizontal {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -281,19 +291,28 @@ div.panel-quake td {
 }
 
 div.panel-quake a:link,
-div.panel-quake a:visited  {
-     color: rgba(255, 255, 255, 0.5);
+div.panel-quake a:visited {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 div.panel-quake a:hover,
 div.panel-quake a:active {
-    color:  #ffa500;
+    color: #ffa500;
 }
 
 a:link, a:visited {
     color: rgba(255, 255, 255, 0.5);
 }
 
-a:hover , a:active  {
-    color: rgba(100, 149, 237, 0.5);
+a:hover, a:active {
+    color: rgba(0, 255, 255, 0.5);
+}
+
+.horizontal {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.vertical {
+    display: block;
 }

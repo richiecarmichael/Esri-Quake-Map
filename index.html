@@ -45,27 +45,27 @@
             <div id='map'></div>
             <div id='chart'></div>
             <div id='filters'>
-                <div data-action='all' class='button selected'>
+                <div data-action='all' class='button vertical selected'>
                     <img src='img/home.png' height='20' />
                     <div class='button-text'>
                         All
                     </div>
-                </div><div data-action='quake' class='button'>
+                </div><div data-action='quake' class='button vertical'>
                     <img src='img/quake.png' height='20' />
                     <div class='button-text'>
                         Quakes
                     </div>
-                </div><div data-action='nuke' class='button'>
+                </div><div data-action='nuke' class='button vertical'>
                     <img src='img/nuke.png' height='20' />
                     <div class='button-text'>
                         Nukes
                     </div>
-                </div><div data-action='deadliest' class='button'>
+                </div><div data-action='deadliest' class='button vertical'>
                     <img src='img/deadliest.png' height='20' />
                     <div class='button-text'>
                         Deadliest
                     </div>
-                </div><div data-action='largest' class='button'>
+                </div><div data-action='largest' class='button vertical'>
                     <img src='img/explosion.png' height='20' />
                     <div class='button-text'>
                         Largest
@@ -73,12 +73,12 @@
                 </div>
             </div>
             <div id='help'>
-                <div data-action='how' class='button'>
+                <div data-action='how' class='button vertical'>
                     <img src='img/help.png' height='20' />
                     <div class='button-text'>
                         Help
                     </div>
-                </div><div data-action='about' class='button'>
+                </div><div data-action='about' class='button vertical'>
                     <img src='img/about.png' height='20' />
                     <div class='button-text'>
                         About
@@ -95,9 +95,10 @@
             </g>
         </svg>
     </div>
-    <div id='about'>
-        <div id='about-window'>
-            <div id='about-description'>
+    <div id='about' class='dialog'>
+        <div>
+            <div class='dialog-banner'>About Quake Map</div>
+            <div class='dialog-description'>
                 <p>This application was designed and developed by <a href='http://www.esri.com'>Esri</a>'s <a href='http://blogs.esri.com/esri/apl/'>Prototype Lab</a> in <a href='https://en.wikipedia.org/wiki/Redlands,_California'>Redlands</a>, California. The application is built using the following technologies:</p>
                 <ul>
                     <li><a href='https://developers.arcgis.com/javascript/'>ArcGIS API for JavaScript</a> (<a href='https://developers.arcgis.com/javascript/beta/'>beta</a>) by Esri</li>
@@ -105,14 +106,83 @@
                     <li><a href='https://www.google.com/fonts'>Google Fonts</a>, specifically <a href='https://www.google.com/fonts/specimen/Roboto'>Roboto</a> and <a href='https://www.google.com/fonts/specimen/Berkshire+Swash'>Berkshire Swash</a></li>
                     <li><a href='http://jquery.com/'>jQuery</a> by the jQuery Foundation Inc.</li>
                     <li><a href='http://sylvester.jcoglan.com/'>Sylvester</a> by <a href='http://jcoglan.com/'>James Coglan</a></li>
-                    
                 </ul>
-                <p><a href=''>Earthquake</a> data consists of 10,835 seimic events from 1900 to July 2015 with magnitudes of six or greater on the <a href='https://en.wikipedia.org/wiki/Richter_magnitude_scale'>Richter scale</a>. The data was downloaded from the <a href='http://www.usgs.gov/'>USGS</a>'s <a href='http://earthquake.usgs.gov/monitoring/anss/'>ANSS</a> <a href='http://earthquake.usgs.gov/earthquakes/search/'>Comprehensive Earthquake Catalog</a>.</p>
+                <p><a href=''>Earthquake</a> data consists of 10,835 seimic events from 1900 to July 2015 with magnitudes of six or greater on the <a href='https://en.wikipedia.org/wiki/Richter_magnitude_scale'>Richter scale</a>. The data was downloaded from the <a href='http://www.usgs.gov/'>USGS</a>'s <a href='http://earthquake.usgs.gov/monitoring/anss/'>ANSS</a> <a href='http://earthquake.usgs.gov/earthquakes/search/'>Comprehensive Earthquake Catalog</a>. Information on the <a href='https://en.wikipedia.org/wiki/Lists_of_earthquakes#Largest_earthquakes_by_magnitude'>largest</a> and <a href='https://en.wikipedia.org/wiki/Lists_of_earthquakes#Deadliest_earthquakes_on_record'>deadliest</a> earthquakes was sourced from <a href='https://en.wikipedia.org'>wikipedia</a>.</p>
                 <p>Seimic events hightlighted red in the chart indicate those events within a one year period, or half a year either side of the red line.</p>
                 <p>The souce code for this application can be downloaded from <a href='https://github.com/richiecarmichael/Esri-Quake-Map'>here</a>.</p>
             </div>
-            <div data-action='close' class='button align-center'>
-                <div>Close</div>
+            <div class='dialog-buttons'>
+                <div data-action='close' class='button align-center horizontal'>
+                    <div>Close</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='welcome' class='dialog'>
+        <div>
+            <div class='dialog-banner'>Welcome</div>
+            <div class='dialog-description'>
+                <img src='img/esri.png' width='350' />
+                <p>Welcome to Quake Map. An application to browse more than 10,000 earthquakes in both time and space.</p>
+                <p>If you are new to Quake Map please click the tutorial button below for step by step instructions. Feel free to skip the tutorial, you can always view it later by clicking on the help button in the menu on the left hand side of the screen.</p>
+                <p>Please see the about dialog for data credit and a list of technology contributors.</p>
+            </div>
+            <div class='dialog-buttons'>
+                <div data-action='tutorial' class='button align-center horizontal'>
+                    <div>Tutorial</div>
+                </div>
+                <div data-action='close' class='button align-center horizontal'>
+                    <div>Close</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='tutorial-1' class='dialog'>
+        <div>
+            <div class='dialog-banner'>Quake Map Tutorial (1 of 3)</div>
+            <div class='dialog-description'>
+                <img src='img/screenshot1.png' width='450' />
+                <p>The quake chart, the primary tool for navigating a century of seismic events in both time and space. Each dot represents a seismic event between 1900 and late July 2015, there are a total of 10,835 represented in this chart. The horizontal and vertical axises represents the date and magnitude of the seismic event.</p>
+                <p>The red graticle is used to select a subset of seismic events for display on the globe and information panel on the right hand side. The graticle can be moved by dragging it with the left mouse button pressed or by simply click any other event on the chart. The selection window is one year, or half a year either side of the red graticle. Moving your mouse over a selected event will highlight the corresponding entry on the globe and information panel.</p>
+            </div>
+            <div class='dialog-buttons'>
+                <div data-action='next' class='button align-center horizontal'>
+                    <div>Next</div>
+                </div>
+                <div data-action='finish' class='button align-center horizontal'>
+                    <div>Finish</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='tutorial-2' class='dialog'>
+        <div>
+            <div class='dialog-banner'>Quake Map Tutorial (2 of 3)</div>
+            <div class='dialog-description'>
+                <img src='img/screenshot2.png' width='320' />
+                <p>This menu primarily allows you to chart a subset of the 10,835 seismic events. As the name suggestions, Quakes and Nukes will show only events relating to an earthquake or nuclear explosion. Likewise, the next two filter will show quakes with the highest fatalities and largest magnitude. he help button will re-launch this tutorial and the about button will display distails about the data and technology used.</p>
+            </div>
+            <div class='dialog-buttons'>
+                <div data-action='next' class='button align-center horizontal'>
+                    <div>Next</div>
+                </div>
+                <div data-action='finish' class='button align-center horizontal'>
+                    <div>Finish</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='tutorial-3' class='dialog'>
+        <div>
+            <div class='dialog-banner'>Quake Map Tutorial (3 of 3)</div>
+            <div class='dialog-description'>
+                <img src='img/screenshot3.png' width='288'/>
+                <p>Lastly, the information panel presents tabular data for seimic events highlighted red in the chart. Events are ordered by magnitude and include details like date and depth. The usgs link may provide additional maps and data from the USGS website. Many of the more prominent events will have a link to its corresponding wikipedia entry.</p>
+            </div>
+            <div class='dialog-buttons'>
+                <div data-action='finish' class='button align-center horizontal'>
+                    <div>Finish</div>
+                </div>
             </div>
         </div>
     </div>
