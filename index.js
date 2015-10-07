@@ -6,7 +6,6 @@
 require([
     'esri/Map',
     'esri/Camera',
-    'esri/Color',
     'esri/layers/ArcGISTiledLayer',
     'esri/core/Scheduler',
     'esri/views/SceneView',
@@ -15,7 +14,6 @@ require([
 function (
     Map,
     Camera,
-    Color,
     ArcGISTiledLayer,
     Scheduler,
     SceneView
@@ -209,7 +207,7 @@ function (
             // Get webgl context and create shader
             _gl = _view.canvas.getContext('experimental-webgl');
 
-            // Get a refernce to the Esri camera
+            // Get a reference to the Esri camera
             _camera = _view._stage.getCamera();
 
             // Disable idle frame refreshes
