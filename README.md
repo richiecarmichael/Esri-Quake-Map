@@ -2,7 +2,7 @@
 
 This application was designed and developed by [Esri](http://www.esri.com/)'s [Applications Prototype Lab](http://blogs.esri.com/esri/apl/) in Redlands, California.
 
-The live application is available [here](https://github.com/richiecarmichael/Esri-Quake-Map).
+The live application is available [here](http://richiecarmichael.github.io/quake/index.html).
 
 The application is built using the following technologies:
 * [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) ([beta](https://developers.arcgis.com/javascript/beta/)) by Esri
